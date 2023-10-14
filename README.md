@@ -41,3 +41,29 @@ As a visitor
 When I visit '/countries/:id'
 Then I see the citizen with that id including the countries' attributes
 (data from each column that is on the countries table)
+
+[ ] done
+
+User Story 3, Citizen Index 
+
+As a visitor
+When I visit '/citizens'
+Then I see each Citizen in the system including the Citizen's attributes
+(data from each column that is on the citizens table)
+
+[ ] done
+
+User Story 4, Citizen Show 
+
+As a visitor
+When I visit '/Citizens/:id'
+Then I see the Citizen with that id including the Citizen's attributes
+(data from each column that is on the Citizen table)
+[ ] done
+
+User Story 5, Country Citizen Index 
+
+As a visitor
+When I visit '/Countries/:Country_id/Citizen_table_name'
+Then I see each Citizen that is associated with that Country's with each Citizen's attributes
+(data from each column that is on the Citizen table)

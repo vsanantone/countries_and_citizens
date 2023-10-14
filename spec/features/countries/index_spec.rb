@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "describing country features" do
-  describe "Country Index" do
+RSpec.describe "Country Index" do
+  describe "As a visitor When I visit '/countries" do
     it "shows the name of each country record in the system" do
       # For each country table
       # As a visitor
