@@ -64,6 +64,6 @@ Then I see the Citizen with that id including the Citizen's attributes
 User Story 5, Country Citizen Index 
 
 As a visitor
-When I visit '/Countries/:Country_id/Citizen_table_name'
+When I visit '/Countries/:Country_id/Citizens'
 Then I see each Citizen that is associated with that Country's with each Citizen's attributes
 (data from each column that is on the Citizen table)
