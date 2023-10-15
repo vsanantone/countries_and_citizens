@@ -1,0 +1,11 @@
+<h1>Citizen</h1>
+<% @citizens.each do |citizen| %>
+  <p>Citizen: <%= citizen.name  %></p>
+  <p>Age: <%= citizen.age  %></p>
+  <p>Country: <%= citizen.country.name  %></p>
+  <p><% if citizen.employed %></p>
+       <p>Is Employed</p>
+     <% else %>
+       <p>Is Not Employed</p>
+     <% end %>
+  <% end %>
