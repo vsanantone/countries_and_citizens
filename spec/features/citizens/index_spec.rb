@@ -39,5 +39,13 @@ RSpec.describe "Citizen Index" do
 
     # (data from each column that is on the citizens table)
     end
+  
+  it "has a link to Citizen's index" do
+    # As a visitor
+    # When I visit any page on the site
+    visit '/citizens' 
+    # Then I see a link at the top of the page that takes me to the Citizen Index
+      expect(page).to have_link("Citizen Index", href: '/citizens')
+    end
   end
 end

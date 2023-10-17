@@ -13,16 +13,22 @@ RSpec.feature "Country's Citizens index" do
 
     # As a visitor
     # When I visit '/Countries/:Country_id/Citizens'
-    # Then I see each Citizen that is associated with that Country's with each Citizen's attributes
+    # Then I see each Citizen that is associated with that Country with each Citizen's attributes
     # (data from each column that is on the Citizen table)
 
     # When I visit '/Countries/:Country_id/Citizens'
     visit "/countries/#{israel.id}/citizens"
 
-    # Then I see each Citizen that is associated with that Country with each Citizen's attributes
-    expect(page).to have_content(shilo.name)
-    expect(page).to have_content(rifkah.name)
-    expect(page).to_not have_content(artemy.name)
+    # Then I see each Citizen that is associated with that Country with each Citizen's name, employment status, and age)
+    expect(page).to have_content("Shilo")
+    expect(page).to have_content("Employed: true")
+    expect(page).to have_content("28")
     
+    expect(page).to have_content("Rifkah")
+    expect(page).to have_content("Employed: false")
+    expect(page).to have_content("23")
+
+    expect(page).to_not have_content("Artemy")
+    # expect(page).to_not have_content("Marjory")
   end
 end
