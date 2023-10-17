@@ -26,6 +26,7 @@ Things you may want to cover:
 ![](./israel.png)
 [ ] done
 
+Iteration 1
 User Story 1, Country Index 
 
 For each country table
@@ -100,5 +101,23 @@ Then I see a link at the top of the page that takes me to the Country Index
 User Story 10, Country Citizen Index Link
 
 As a visitor
-When I visit a Country show page ('/Countries/:id')
-Then I see a link to take me to that Country's `Citizens` page ('/Countrys/:id/Citizens')
+When I visit a Country's show page ('/Countries/:id')
+Then I see a link to take me to that Country's `Citizens` page ('/Countries/:id/Citizens')
+
+Iteration 2
+
+CRUD
+[ ] done
+
+User Story 11, Country Creation 
+
+As a visitor
+When I visit the Country Index page
+Then I see a link to create a new Country record, "New Country"
+When I click this link
+Then I am taken to '/Countries/new' where I  see a form for a new Country record
+When I fill out the form with a new Country's attributes:
+And I click the button "Create Country" to submit the form
+Then a `POST` request is sent to the '/Countries' route,
+a new Country record is created,
+and I am redirected to the Country Index page where I see the new Country displayed.
