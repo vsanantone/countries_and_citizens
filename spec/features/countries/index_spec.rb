@@ -47,5 +47,33 @@ RSpec.describe "Country Index" do
       # expect("Created at: #{israel.created_at}").to appear_before("Created at: #{usa.created_at}")
       # expect("Created at: #{usa.created_at}").to appear_before("Created at: #{phillipines.created_at}")
     end
+
+    it "has a link to Citizens index" do
+      # As a visitor
+      # When I visit any page on the site
+      visit '/countries' 
+      # Then I see a link at the top of the page that takes me to the Country Index
+      expect(page).to have_link("Citizens Index", href: '/citizens')
+    end
+
+    it "has a link to Countries index" do
+      # As a visitor
+      # When I visit any page on the site
+      visit '/countries' 
+      # Then I see a link at the top of the page that takes me to the Country Index
+      expect(page).to have_link("Countries Index", href: '/countries')
+    end
+
+    it "has a link to create a new Country record, 'New Country'" do
+      # As a visitor
+      # When I visit the Country Index page
+      visit '/countries'
+      # Then I see a link to create a new Country record, "New Country"
+      expect(page).to have_link("New Country", href: '/countries/new')
+      # When I click this link
+      # Then I am taken to '/Countries/new' where I  see a form for a new Country record
+    end
   end
 end
+
+
