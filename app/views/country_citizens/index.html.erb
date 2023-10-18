@@ -1,0 +1,9 @@
+<h1>Citizens of <%= "#{@country.name}"%></h1>
+<ul>
+  <% @citizens.each do |citizen| %>
+    <li><%= citizen.name %></li>
+    <li><%= citizen.age %></li>
+    <li>Employed: <%= citizen.employed %></li>
+    <br>
+      <% end%>
+</ul>

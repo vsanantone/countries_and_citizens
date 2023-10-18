@@ -1,1 +1,6 @@
-<h1><%= @country.name%> <%= @country.democratic %><%= @country.year_founded %></h1>
+<h1><%= @country.name%></h1> 
+<p> <%= @country.name %> Citizen Index </p>
+<p><%= @country.democratic %></p>
+<p><%= @country.year_founded %></p>
+<p>How many citizens? <%= @country.census%></p> #replace .citizens.count with 
+<p><%= link_to "#{@country.name}'s Citizen Index", "/countries/#{@country.id}/citizens" %></p>
