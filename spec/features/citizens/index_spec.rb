@@ -46,6 +46,10 @@ RSpec.describe "Citizen Index" do
     visit '/citizens' 
     # Then I see a link at the top of the page that takes me to the Citizen Index
     expect(page).to have_link("Citizens Index", href: '/citizens')
+
+    click_link("Citizens Index")
+
+    expect(current_path).to eq('/citizens')
     end
 
   it "has a link to Countries index" do
@@ -53,7 +57,6 @@ RSpec.describe "Citizen Index" do
     # When I visit any page on the site
     visit '/citizens' 
     # Then I see a link at the top of the page that takes me to the Citizen Index
-    save_and_open_page
     expect(page).to have_link("Countries Index", href: '/countries')
     end
   end

@@ -16,7 +16,6 @@ RSpec.describe "Country Index" do
       visit '/countries'
 
       #test
-      # save_and_open_page
       expect(page).to have_content(israel.name)
       expect(page).to have_content(usa.name)
       expect(page).to have_content(phillipines.name)
@@ -71,7 +70,10 @@ RSpec.describe "Country Index" do
       # Then I see a link to create a new Country record, "New Country"
       expect(page).to have_link("New Country", href: '/countries/new')
       # When I click this link
+      click_link('New Country')
       # Then I am taken to '/Countries/new' where I  see a form for a new Country record
+      expect(current_path).to eq('/countries/new')
+      
     end
   end
 end

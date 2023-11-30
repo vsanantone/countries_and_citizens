@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 
-israel = Country.create!(name: "Israel", democratic: true, year_founded: 1948)
+    israel = Country.create!(name: "Israel", democratic: true, year_founded: 1948)
     usa = Country.create!(name: "USA", democratic: true, year_founded: 1776)
     phillipines = Country.create!(name: "Phillipines", democratic: true, year_founded: 1800)
     
