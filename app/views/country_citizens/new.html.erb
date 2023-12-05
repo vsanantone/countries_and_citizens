@@ -1,0 +1,11 @@
+<h1>New Citizen Record</h1>
+
+<%= form_with url: "/countries/#{@country.id}/citizens", method: :post, data: {turbo: false } do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label  :employed %>
+  <%= form.select :employed, [true, false] %>
+  <%= form.label :age %>
+  <%= form.text_field :age %>
+  <%= form.submit "Create Citizen" %>
+<% end %>

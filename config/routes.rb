@@ -5,9 +5,18 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root to: "countries#index"
-  get '/countries', to: "countries#index"
-  get '/countries/:id', to: "countries#show"
-  get '/citizens', to: "citizens#index"
-  get '/citizens/:id', to: "citizens#show"
-  get '/countries/:id/citizens', to: "country_citizens#index" #????
+
+  get   '/countries',                   to: "countries#index"
+  get   '/countries/new',               to: "countries#new"
+  get   '/countries/:id',               to: "countries#show"
+  post  '/countries',                   to: "countries#create"
+  get   '/countries/:id/edit',          to: "countries#edit"
+  patch '/countries/:id',               to: "countries#update"
+  get   '/citizens',                    to: "citizens#index"
+  get   '/citizens/:id',                to: "citizens#show"
+  get   '/citizens/:id/edit',           to: "citizens#edit"
+  patch '/citizens/:id/',               to: "citizens#update"
+  get   '/countries/:id/citizens',      to: "country_citizens#index" #????
+  get   '/countries/:id/citizens/new',  to: "country_citizens#new"
+  post  '/countries/:id/citizens',      to: "country_citizens#create"
 end

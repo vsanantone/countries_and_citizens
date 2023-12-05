@@ -4,3 +4,4 @@
 <p><%= @country.year_founded %></p>
 <p>How many citizens? <%= @country.census%></p> #replace .citizens.count with 
 <p><%= link_to "#{@country.name}'s Citizen Index", "/countries/#{@country.id}/citizens" %></p>
+<p><%= link_to "Update Country", "/countries/#{@country.id}/edit" %></p>

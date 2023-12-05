@@ -1,0 +1,11 @@
+<h1>Edit Country Attributes</h1>
+
+<%= form_with url: "/countries/#{@country.id}", method: :patch do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :democratic%>
+  <%= form.select :democratic, [true, false]%>
+  <%= form.label :year_founded%>
+  <%= form.text_field :year_founded%>
+  <%= form.button "Update Country"%>
+<% end %>

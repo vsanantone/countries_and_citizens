@@ -1,9 +1,12 @@
 <h1>Citizens of <%= "#{@country.name}"%></h1>
+<%= link_to "Create Citizen", "/countries/#{@country.id}/citizens/new"  %>
+<%= link_to "Alphabetize Citizens", :sort => "name" %>
 <ul>
   <% @citizens.each do |citizen| %>
-    <li><%= citizen.name %></li>
+    <li class="citizen"><%= citizen.name %> <%= link_to "Edit #{citizen.name}", "/citizens/#{citizen.id}/edit" %></li>
     <li><%= citizen.age %></li>
     <li>Employed: <%= citizen.employed %></li>
     <br>
       <% end%>
 </ul>
+
