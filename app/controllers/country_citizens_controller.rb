@@ -3,7 +3,7 @@ class CountryCitizensController < ApplicationController
     #big boo boo
     @country = Country.find(params[:id])
     # @citizens = Citizen.where(country_id: @country.id)
-    @citizens = @country.citizens ## research this.
+    @citizens = @country.citizens.alpha_sort(params[:sort]) ## research this.
     # We want all citizens from a specfic country
     # select citizens where 
   end

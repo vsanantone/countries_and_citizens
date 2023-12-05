@@ -1,6 +1,8 @@
 <h1>Countries</h1>
+<p><%= link_to "New Country", "/countries/new" %></p>
+<br>
 <% @countries.each do |country| %>
-  <p>Country: <%= country.name %></p>
+  <p>Country: <%= country.name %> <%= link_to "Edit #{country.name}", "/countries/#{country.id}/edit" %></p>
   <p>Created at: <%= country.created_at %></p>
+  <br>
   <% end %>
-  <%= link_to "New Country", "/countries/new" %>

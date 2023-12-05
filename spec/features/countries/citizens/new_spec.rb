@@ -35,7 +35,7 @@ RSpec.feature "Country Citizen New" do
     click_button("Create Citizen")
     # Then a `POST` request is sent to '/parents/:parent_id/child_table_name',
     # a new child object/row is created for that parent,
-    # and I am redirected to the Parent Childs Index page where I can see the new child listed
+    # and I am redirected to the Country Citizens Index page where I can see the new Citizen listed
     expect(current_path).to eq("/countries/#{israel.id}/citizens")
     expect(page).to have_content("Levi")
     expect(page).to have_content("Employed: true")

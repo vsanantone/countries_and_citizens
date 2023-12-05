@@ -1,3 +1,4 @@
+<%= link_to "Update Citizen", "/citizens/#{@citizen.id}/edit" %>
 <h2><%= @citizen.name %></h2>
   <p>Age: <%= @citizen.age  %></p>
   <p>Country: <%= @citizen.country.name  %></p>
@@ -6,3 +7,4 @@
      <% else %>
        <p>Is Not Employed</p>
      <% end %>
+

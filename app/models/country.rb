@@ -9,6 +9,5 @@ class Country < ApplicationRecord
   def census
     citizens.count
   end
-  #Look up Active Record Methods
 
 end

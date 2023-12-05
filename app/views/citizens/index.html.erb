@@ -1,6 +1,6 @@
 <h1>Citizens</h1>
 <% @citizens.each do |citizen| %>
-  <p>Citizen: <%= citizen.name  %></p>
+  <p>Citizen: <%= citizen.name %> <%= link_to "Edit #{citizen.name}", "/citizens/#{citizen.id}/edit" %></p>
   <p>Age: <%= citizen.age  %></p>
   <p>Country: <%= citizen.country.name  %></p>
   <p><% if citizen.employed %></p>
