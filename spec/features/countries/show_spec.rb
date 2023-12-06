@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Country Show" do
+RSpec.describe "Country Show Page" do
     it "shows the country with the id including the country's attributes" do
       #set up
       israel = Country.create!(name: "Israel", democratic: true, year_founded: 1948)
@@ -44,6 +44,31 @@ RSpec.describe "Country Show" do
       expect(page).to have_link("Israel's Citizen Index", href: "/countries/#{israel.id}/citizens")
     end
   end
+
+    it "deletes a country" do
+      israel = Country.create!(name: "Israel", democratic: true, year_founded: 1948)
+      Country.create!(name: "USA", democratic: true, year_founded: 1776)
+      Country.create!(name: "Phillipines", democratic: true, year_founded: 1800)
+      Country.create!(name: "New Zealand", democratic: true, year_founded: 1999)
+      
+      # User Story 19, Country Delete 
+      # As a visitor
+      # When I visit a Country show page
+      visit "/countries/#{israel.id}"
+      # Then I see a link to delete the Country
+      expect(page).to have_link("Delete Country", href: "/countries/#{israel.id}")
+      # When I click the link "Delete Country"
+      click_link("Delete Country")
+      # Then a 'DELETE' request is sent to '/countries/:id',
+      # the country is deleted, and all citizen records are deleted
+      # and I am redirected to the Countries index page where I no longer see this country
+      expect(current_path).to eq("/countries")
+      Country.all.each do |country|
+        expect(page).to have_content(country.name)
+      end
+      expect(page).to_not have_content("Israel")
+    end
+ 
 
   # describe "Country Citizen Index Link" do
   #   it "displays a link that redirects to the Country's Citizens' index page" do

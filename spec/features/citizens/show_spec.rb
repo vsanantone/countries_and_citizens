@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe "Citizen Show" do
   describe "As a visitor" do
     it "displays a Citizen in the system including the Citizen's attributes" do
-      # As a visitor
       israel = Country.create!(name: "Israel", democratic: true, year_founded: 1948)
       usa = Country.create!(name: "USA", democratic: true, year_founded: 1776)
       phillipines = Country.create!(name: "Phillipines", democratic: true, year_founded: 1800)
@@ -14,7 +13,6 @@ RSpec.describe "Citizen Show" do
       marjory = phillipines.citizens.create!(name: "Marjory", employed: true, age: 35)
 
 
-      # As a visitor    
       # When I visit '/Citizens/:id'
       visit "/citizens/#{shilo.id}"
 
@@ -33,7 +31,6 @@ RSpec.describe "Citizen Show" do
       citizen = israel.citizens.create!(name: "Rifkah", employed: false, age: 35)
 
       # User Story 14, Citizen Update 
-      # As a visitor
       # When I visit a Citizen's Show page
       visit "/citizens/#{citizen.id}"
       # Then I see a link to update that Citizen "Update Citizen"

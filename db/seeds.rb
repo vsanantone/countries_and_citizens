@@ -13,5 +13,15 @@
     
     shilo = Citizen.create!(name: "Shilo", employed: true, age: 28, country_id: israel.id)
     rifkah = israel.citizens.create!(name: "Rifkah", employed: false, age: 23)
+    levi = israel.citizens.create!(name: "Levi", employed: true, age: 22)
+
     artemy = Citizen.create!(name: "Artemy", employed: true, age: 30, country: usa)
+    bob = Citizen.create!(name: "Bob", employed: true, age: 38, country: usa)
+    mariah = Citizen.create!(name: "Mariah", employed: true, age: 32, country: usa)
+
+
     marjory = phillipines.citizens.create!(name: "Marjory", employed: true, age: 35)
+    kathy = phillipines.citizens.create!(name: "Kathy", employed: false, age: 28)
+    manny = phillipines.citizens.create!(name: "Manny", employed: true, age: 48)
+
+

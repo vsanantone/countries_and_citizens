@@ -1,7 +1,8 @@
+<p><%= link_to "#{@country.name}'s Citizen Index", "/countries/#{@country.id}/citizens" %></p>
+<p><%= link_to "Update Country", "/countries/#{@country.id}/edit" %></p>
+<p><%= link_to "Delete Country", "/countries/#{@country.id}", method: :delete %></p>
 <h1><%= @country.name%></h1> 
 <p> <%= @country.name %> Citizen Index </p>
 <p><%= @country.democratic %></p>
 <p><%= @country.year_founded %></p>
 <p>How many citizens? <%= @country.census%></p> #replace .citizens.count with 
-<p><%= link_to "#{@country.name}'s Citizen Index", "/countries/#{@country.id}/citizens" %></p>
-<p><%= link_to "Update Country", "/countries/#{@country.id}/edit" %></p>
