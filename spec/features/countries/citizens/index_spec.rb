@@ -54,6 +54,7 @@ RSpec.feature "Country's Citizens index" do
     expect(page.all('.citizen')[2]).to have_content("Artemy")
     expect(page.all('.citizen')[3]).to have_content("Marjory")
     expect(page).to_not have_content("Brad")
+    save_and_open_page
     # Then I see a link to sort citizens in alphabetical order
     expect(page).to have_link("Alphabetize Citizens")
     # When I click on the link
@@ -66,6 +67,8 @@ RSpec.feature "Country's Citizens index" do
     expect(page.all('.citizen')[2]).to have_content("Rifkah")
     expect(page.all('.citizen')[3]).to have_content("Shilo")
     expect(page).to_not have_content("Brad")
+    save_and_open_page
+
   end
 
   it "displays a Citizen's edit link" do

@@ -27,6 +27,12 @@ class CountriesController < ApplicationController
     redirect_to '/countries' 
   end
 
+  def destroy
+    country = Country.find(params[:id])
+    country.destroy
+    redirect_to "/countries"
+  end
+
 
   private
 
